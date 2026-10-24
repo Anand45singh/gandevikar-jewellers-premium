@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: #d7b46a;
+    --color-maroon: #8C1B22;
+    --color-ivory: #FBF7F0;
+    --color-obsidian: #0B0B0B;
+    --color-ink: #2A2118;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans), sans-serif;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* Custom thin luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f5eedf;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d7b46a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a38036;
+  }
+
+  /* Focus visible accessibility states */
+  *:focus-visible {
+    outline: 2px solid #d7b46a;
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  /* Selection highlight */
+  ::selection {
+    background-color: rgba(215, 180, 106, 0.35);
+    color: #8C1B22;
+  }
+}
+
+/* Accessibility: respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Page enter (replaces framer AnimatePresence) */
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.page-enter { animation: page-enter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Hero Ken Burns (was referenced but never defined) */
+@keyframes kenburns {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12); }
+}
+
+/* Lenis owns smooth scrolling; native smooth-scroll fights it */
+html { scroll-behavior: auto !important; }
