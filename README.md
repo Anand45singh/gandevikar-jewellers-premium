@@ -6,8 +6,8 @@ The goal was to keep the brand's identity, content and look and feel, and raise 
 
 | | |
 |---|---|
-| **Live URL** | `https://<your-project>.vercel.app` *(fill in after deploy)* |
-| **Repository** | `https://github.com/<your-username>/ggj-website` *(fill in)* |
+| **Live URL** | `https://gandevikar-jewellers-premium.vercel.app/`  |
+| **Repository** | `https://github.com/Anand45singh/gandevikar-jewellers-premium`  |
 | **Reference site** | https://girishbhaigandevikar.com |
 | **Hosting** | Vercel (separate project; the production domain is **not** connected) |
 
